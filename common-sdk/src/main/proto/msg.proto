@@ -1,0 +1,54 @@
+syntax = "proto2";
+package common.protobuf;
+option java_outer_classname = "MsgBuilder";
+
+message ProtoMsg{
+  required int64 id = 1;
+  optional int32 from_id = 2;
+  optional int32 dest_id = 3;
+  optional int64 client_id = 4;
+  optional string  dialog_id = 5;
+  required MsgType msg_type = 6;
+  optional string body = 7;
+  optional AckState state = 8;
+  optional uint64 time = 9;
+  optional string cmd = 10;
+  required ChatType chat_type = 11;
+}
+
+enum ChatType{
+  Text = 1;
+  Photo = 2;
+  Audio = 3;
+}
+/*enum CmdType{
+  Greet = 1;
+  LoadID = 2;
+  LoadMsg = 3;
+}*/
+enum AckState{
+  /*Send = 1;
+  Receive = 2;
+  Read = 3;
+  UnSend = 4;
+  UnReceive = 5;
+  DestUnRead = 6;*/
+
+  ClientSend = 1;
+  ServerReceive = 2;
+  ServerSend = 3;
+  ClientReceive = 4;
+  ClientRead = 5;
+  ServerRead = 6;
+  Error = 7;
+}
+
+enum MsgType{//全局共有的
+  Ping = 1;
+  Pong = 2;
+  Chat = 3;
+  ChatAck = 4;
+  CMD = 5;
+  Broadcast = 6;
+  GroupChat = 7;
+}
