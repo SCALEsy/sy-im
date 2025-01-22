@@ -1,6 +1,8 @@
-package sy.im.client
+package client.test
 
 import org.apache.commons.lang3.exception.ExceptionUtils
+import sy.im.client.ClientConfig
+import sy.im.client.ImIClient
 import java.util.*
 
 

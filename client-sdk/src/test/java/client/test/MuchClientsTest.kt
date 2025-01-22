@@ -1,7 +1,8 @@
-package sy.im.client
+package client.test
 
 import com.fasterxml.jackson.core.type.TypeReference
 import common.beans.WebResponse
+import sy.im.client.ImIClient
 import sy.im.client.utils.WebClient
 import java.util.*
 import java.util.concurrent.CountDownLatch
